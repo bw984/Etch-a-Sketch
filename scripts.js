@@ -18,6 +18,11 @@ for (let i = 1; i < 257; i++) {
 
 function mouseEnter (elementID) {
   let domElement = document.getElementById(elementID);
+  /*
+  //create random color for each element instead of standard black
+  domElement.style.background = "rgb(" + getRndInteger(0,255) + "," + 
+  getRndInteger(0,255) + "," + getRndInteger(0,255) + ")";
+  */
   domElement.style.background = "black";
 }
 
@@ -41,4 +46,7 @@ function userButtonClick () {
     gridElement.addEventListener("mouseenter", function(){mouseEnter(elementID)});
     gridContainer.appendChild(gridElement);
   }
+}
+function getRndInteger(min, max) {
+	return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
